@@ -9,46 +9,106 @@
 
     <script>
 
-        // Return one of string values "rock", "paper", "scissors" value in console 
+// Return one of string values "rock", "paper", "scissors" value in console 
 
         function getComputerChoice(){
-            const comChoice = Math.floor(Math.random()*3);
+            const choice = Math.floor(Math.random()*3);
 
-            if(comChoice === 0){
+            if(choice === 0){
                 return "Rock";
-            } else if (comChoice === 1){
+            } else if (choice === 1){
                 return "Paper";
             } else {
                 return "Scissors";
             }
 
         }
+        
+         let computerSelection = getComputerChoice();
+        console.log("Computer chose " + computerSelection)
 
-        // Return one of string values "rock", "paper", "scissors" value in console after prompt
+// Return one of string values "rock", "paper", "scissors" value in console after prompt
 
 
         humanChoice = prompt("Choose Rock, Paper or Scissors");
 
+        function getHumanChoice(){
             if(humanChoice.toLowerCase() === "rock"){
-                console.log("Rock");
+                return "Rock";
             } else if (humanChoice.toLowerCase() === "paper"){
-                console.log("Paper");
+                return "Paper";
             } else if (humanChoice.toLowerCase() === "scissors"){
-                console.log("Scissors");
+                return "Scissors";
+            }
+        }
+
+        let humanSelection = getHumanChoice();
+        console.log("You chose " + humanSelection)
+
+
+/* Play Round
+ Define rules of Rock, Paper, Scissors
+ If humanChoice = Paper and computerChoice = Rock = Human wins
+ Else if humanChoice = Rock and computerChoice = Scissors = Human wins
+ Else if humanChoice = Scissors computerChoice = and Paper = Human wins
+
+ Else if computerChoice = Rock and humanChoice = Scissors = Computer wins
+ Else if computerChoice = Scissors humanChoice = and Paper = Computer wins
+ Else if computerChoice = Rock and humanChoice = Scissors = Computer wins
+
+*/ 
+
+    // Win and Lose messages    
+        const humanWins = "Congrats, you won!"
+        const computerWins = "You lose - better luck next time!"
+        const ties = "Draw! Play again!"
+ 
+
+        let humanScore = 0
+        let computerScore = 0
+
+        function playRound(humanChoice, computerChoice){
+            if(humanSelection  === "Paper" && computerSelection === "Rock"){
+                console.log(humanWins);
+
+            } else if (humanSelection  === "Rock" && computerSelection === "Scissors"){
+                console.log(humanWins);
+
+            } else if (humanSelection  === "Scissors" && computerSelection === "Paper"){
+                console.log(humanWins);
+
+            } else if (computerSelection  === "Paper" && humanSelection === "Rock"){
+                console.log(computerWins);
+
+            } else if (computerSelection  === "Rock" && humanSelection === "Scissors"){
+                console.log(computerWins);
+
+            } else if (computerSelection  === "Scissors" && humanSelection === "Paper"){
+                console.log(computerWins);
+
+            } else if (computerSelection  === humanSelection){
+                console.log(ties); 
+
+            } else{
+                console.log("ERROR");
+
             }
 
-            let humanScore = 0
-            let computerScore = 0
+        }
 
-            function playRound(humanChoice, computerChoice){
+           playRound(humanSelection, computerSelection);
 
 
-            }
+// Play Game
+// If round is over increment(++) humanScore or computerScore by 1
 
-            const humanSelection = getHumanChoice();
-            const computerSelection = getComputerChoice();
+/*  
+    function playGame(){
 
-            playRound(humanSelection, computerSelection)
+    }
+*/
+
+    // Count rounds up to 5       
 
 
             
