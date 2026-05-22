@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPS TEST</title>
+</head>
+<body>
+
+    <script>
+
+        
+
+/*
+
+
+
+*/
+
+
+        let humanScore = 0
+        let computerScore = 0
+
+        function playGame(){
+
+             function getComputerChoice(){
+            
+            return "Scissors";
+
+        }
+
+        humanChoice = prompt("Choose Rock, Paper or Scissors");
+
+         function getHumanChoice(){
+            if(humanChoice.toLowerCase() === "rock"){
+                
+                return "Rock";
+            } 
+        }
+
+            function playRound(humanChoice, computerChoice){   
+
+   
+            const humanWins = "You won!"
+
+
+                if(humanSelection  === "Rock" && computerSelection === "Scissors"){
+                console.log(humanWins, `Your Score: ${++humanScore}`);
+
+            }
+
+
+        }
+            let humanSelection = getHumanChoice();
+            let computerSelection = getComputerChoice();
+            playRound(humanSelection, computerSelection);
+            
+        }
+
+
+            for (let i = 0; humanScore <= 4; i++){
+            playGame();
+
+            }
+
+
+
+
+
+    </script>
+
+</body>
