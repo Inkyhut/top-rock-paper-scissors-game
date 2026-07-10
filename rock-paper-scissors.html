@@ -4,138 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    
+
 </head>
 <body>
 
-    <script>
+    <section class="game">
 
-// Return one of string values "rock", "paper", "scissors" value in console 
+        <div class="title">
+            <h1>Rock Paper Scissors</h1>
+            <p>Do you want to play a game?</p>
+        </div>
 
-        function getComputerChoice(){
-            const choice = Math.floor(Math.random()*3);
+        <div class="select">
+            <h2>
+                Choose your move
+            </h2>
 
-            if(choice === 0){
-                return "Rock";
-            } else if (choice === 1){
-                return "Paper";
-            } else {
-                return "Scissors";
-            }
-
-        }
-        
-
-     //   console.log("Computer chose " + computerSelection)
-
-// Return one of string values "rock", "paper", "scissors" value in console after prompt
+            <div class="options">
+                <button class="rock">Rock</button>
+                <button class="paper">Paper</button>
+                <button class="scissors">Scissors</button>
+            </div>
+        </div>
 
 
+        <div id="score">
+            <div class="playerScore">
+                <h2>Player</h2>
+                <p class="p-count count">0</p>
 
+            </div>       
+            <div class="computerScore">
+                <h2>Computer</h2>
+                <p class="c-count count">0</p>
+            </div>
+        </div>
 
-        function getHumanChoice(){
+        <div class="result"></div>
 
-            humanChoice = prompt("Choose Rock, Paper or Scissors");
+        <button class="reload"></button>
 
-            if(humanChoice.toLowerCase() === "rock"){
-                return "Rock";
-            } else if (humanChoice.toLowerCase() === "paper"){
-                return "Paper";
-            } else if (humanChoice.toLowerCase() === "scissors"){
-                return "Scissors";
-            }
-        }
+    </section>
 
-
-       // console.log("You chose " + humanSelection)
-
-
-/* PLAY ROUND
- Define rules of Rock, Paper, Scissors
- If humanChoice = Paper and computerChoice = Rock = Human wins
- Else if humanChoice = Rock and computerChoice = Scissors = Human wins
- Else if humanChoice = Scissors computerChoice = and Paper = Human wins
-
- Else if computerChoice = Rock and humanChoice = Scissors = Computer wins
- Else if computerChoice = Scissors humanChoice = and Paper = Computer wins
- Else if computerChoice = Rock and humanChoice = Scissors = Computer wins
-
-*/ 
-
-
-// PLAY GAME"
-// If round is over increment(++) humanScore or computerScore by 1
-
-            let humanScore = 0
-            let computerScore = 0
-
-        function playRound(humanChoice, computerChoice){
-
-            const humanWins = "You won!"
-            const computerWins = "You lose!" 
-            const ties = "Draw! Play again!"
-
-            if(humanChoice  === "Paper" && computerChoice === "Rock"){
-
-// Variable humanScore gets incremented ++ first when condition is met
-
-                humanScore++;
-                console.log(humanWins, `Your Score: ${humanScore}`);
-
-            } else if (humanChoice  === "Rock" && computerChoice === "Scissors"){
-                humanScore++;
-                console.log(humanWins, `Your Score: ${humanScore}`);
-
-            } else if (humanChoice  === "Scissors" && computerChoice === "Paper"){
-                humanScore++;
-                console.log(humanWins, `Your Score: ${humanScore}`);
-
-            } else if (computerChoice  === "Paper" && humanChoice === "Rock"){
-                computerScore++;
-                console.log(computerWins, `Computer's Score: ${computerScore}`);
-
-            } else if (computerChoice  === "Rock" && humanChoice === "Scissors"){
-                computerScore++;
-                console.log(computerWins, `Computer's Score: ${computerScore}`);
-
-            } else if (computerChoice  === "Scissors" && humanChoice === "Paper"){
-                computerScore++;
-                console.log(computerWins, `Computer's Score: ${computerScore}`);
-
-            } else if (computerChoice  === humanChoice){
-                
-                console.log(ties); 
-
-            } else{
-                console.log("ERROR");
-
-            }
-
-        }
-            
-/* CALL Play Round
-  FOR Loop iteration for (initialization: score(i) = 0; condition: until both(either or) humanScore <=4 and computerScore <= 4 are met 
-  (<=4 because increment starts at 1); 
-  afterthought: score goes up by 1 after each loop)
-*/
-
-for (let i = 0; humanScore <= 4 && computerScore <= 4; i++){
-    
-    let computerSelection = getComputerChoice();
-    let humanSelection = getHumanChoice(); 
-
-    playRound(humanSelection, computerSelection);
-
-    }
-
-   
-
-
-
-
-
-
-    
-    </script>
+    <script src="rock-paper-scissors.js"></script>
     
 </body>
 </html>
